@@ -1,0 +1,14 @@
+.group-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.group-search > input {
+  border-radius: 0px;
+}
+
+.group-search > button {
+  border-radius: 0px;
+  padding: 8px 16px;
+}

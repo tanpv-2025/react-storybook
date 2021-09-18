@@ -1,0 +1,20 @@
+.menu-item {
+  display: block;
+  color: #ffffffa6;
+  font-size: 16px;
+  padding: 12px 16px;
+  background-color: #001529;
+  margin-bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.menu-item:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.menu-item--selected {
+  background-color: #1890ff;
+  color: #ffffff;
+}
