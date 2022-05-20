@@ -1,0 +1,35 @@
+default:
+  only:
+    events:
+    - pull_request
+
+stages:
+  - build
+  - lint
+  - test
+
+jobs:
+  - name: Install Packages
+    stage: build
+    image: node:14-buster
+    workspace: shared
+    script:
+      - yarn install
+    cache:
+      - key: node_modules_$CI_BRANCH
+        paths:
+          - node_modules
+
+  - name: Running Lint
+    stage: lint
+    image: node:14-buster
+    workspace: shared
+    script:
+      - yarn lint --output-file=.sun-ci-reports/eslint.xml
+
+  - name: Running Test
+    stage: test
+    image: node:14-buster
+    workspace: shared
+    script:
+      - yarn run test --watchAll
